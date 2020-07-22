@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Ant
-      run: ant -noinput -buildfile ResourceCentre_Student/build.xml
+      run: ant -noinput -buildfile ResourceCentre_P11/build.xml
     - name: Compile JUnit Test
       run: javac -cp ResourceCentre_P11/bin:ResourceCentre_P11/ant/junit.jar:ResourceCentre_P11/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre_P11/test/ResourceCentreTest.java -d ResourceCentre_P11/bin
     - name: Run JUnit test
