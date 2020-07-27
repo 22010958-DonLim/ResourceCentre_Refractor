@@ -11,7 +11,11 @@ public class Item {
 		this.dueDate = "";
 		this.isAvailable = true;
 	}
-
+	public String toString() {
+		
+		// Write your codes here
+		return null;
+	}
 	public String getAssetTag() {
 		return assetTag;
 	}
