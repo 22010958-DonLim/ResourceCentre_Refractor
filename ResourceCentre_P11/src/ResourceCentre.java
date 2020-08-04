@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class ResourceCentre {
 
+	private static final int OPTION_ADDITEM = 2;
+	private static final int OPTION_VIEWALLITEM = 1;
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
@@ -19,12 +21,12 @@ public class ResourceCentre {
 			ResourceCentre.menu();
 			option = Helper.readInt("Enter an option > ");
 
-			if (option == 1) {
+			if (option == OPTION_VIEWALLITEM) {
 				// View all items
 				ResourceCentre.viewAllCamcorder(camcorderList);
 				ResourceCentre.viewAllChromebook(chromebookList);
 
-			} else if (option == 2) {
+			} else if (option == OPTION_ADDITEM) {
 				// Add a new item
 				ResourceCentre.setHeader("ADD");			
 				ResourceCentre.setHeader("ITEM TYPES");
@@ -235,7 +237,10 @@ public class ResourceCentre {
 		boolean isLoaned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
-			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+			String assetTag = chromebookList.get(i).getAssetTag();
+			
+			if (tag.equalsIgnoreCase(assetTag)
+					
 					&& chromebookList.get(i).getIsAvailable() == true) {
 				
 				chromebookList.get(i).setIsAvailable(false);
