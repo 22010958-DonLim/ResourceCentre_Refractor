@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class ResourceCentre {
 
-	private static final int OPTION_ADDITEM = 2;
-	private static final int OPTION_VIEWALLITEM = 1;
+
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
@@ -21,12 +20,12 @@ public class ResourceCentre {
 			ResourceCentre.menu();
 			option = Helper.readInt("Enter an option > ");
 
-			if (option == OPTION_VIEWALLITEM) {
+			if (option == 1) {
 				// View all items
 				ResourceCentre.viewAllCamcorder(camcorderList);
 				ResourceCentre.viewAllChromebook(chromebookList);
 
-			} else if (option == OPTION_ADDITEM) {
+			} else if (option == 2) {
 				// Add a new item
 				ResourceCentre.setHeader("ADD");			
 				ResourceCentre.setHeader("ITEM TYPES");
