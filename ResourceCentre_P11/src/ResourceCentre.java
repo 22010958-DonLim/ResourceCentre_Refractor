@@ -123,7 +123,7 @@ public class ResourceCentre {
 		return avail;
 	}
 
-	//================================= Option 1 View =================================
+	//================================= Option 1 View (CRUD - Read) =================================
 	public static String retrieveAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		String output = "";
 
@@ -165,7 +165,7 @@ public class ResourceCentre {
 		System.out.println(output);
 	}
 
-	//================================= Option 2 Add =================================
+	//================================= Option 2 Add (CRUD - Create)=================================
 	public static Camcorder inputCamcorder() {
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
@@ -196,7 +196,7 @@ public class ResourceCentre {
 		System.out.println("Chromebook added");
 	}
 	
-	//================================= Option 3 Loan =================================
+	//================================= Option 3 Loan (CURD- Update) =================================
 	public static boolean doLoanCamcorder(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
 		
 		boolean isLoaned = false;
@@ -265,7 +265,7 @@ public class ResourceCentre {
 		}	
 		
 	}
-	//================================= Option 4 Return =================================
+	//================================= Option 4 Return (CURD- Update)=================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
 
