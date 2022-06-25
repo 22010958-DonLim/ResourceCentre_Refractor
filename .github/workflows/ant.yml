@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Ant
-      run: ant -noinput -buildfile ResourceCentre_P11/build.xml
+      run: ant -noinput -buildfile ResourceCentre_Refactor/build.xml
     - name: Compile JUnit Test
       run: javac -cp ResourceCentre_Refactor/bin:ResourceCentre_Refactor/ant/junit.jar:ResourceCentre_Refactor/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre_Refactor/test/ResourceCentreTest.java -d ResourceCentre_Refactor/bin
     - name: Run JUnit test
