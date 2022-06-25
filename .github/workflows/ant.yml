@@ -23,8 +23,8 @@ jobs:
     - name: Build with Ant
       run: ant -noinput -buildfile ResourceCentre_P11/build.xml
     - name: Compile JUnit Test
-      run: javac -cp ResourceCentre_P11/bin:ResourceCentre_P11/ant/junit.jar:ResourceCentre_P11/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre_P11/test/ResourceCentreTest.java -d ResourceCentre_P11/bin
+      run: javac -cp ResourceCentre_Refactor/bin:ResourceCentre_Refactor/ant/junit.jar:ResourceCentre_Refactor/ant/org.hamcrest.core_1.3.0.v201303031735.jar ResourceCentre_Refactor/test/ResourceCentreTest.java -d ResourceCentre_Refactor/bin
     - name: Run JUnit test
-      run: java -cp ResourceCentre_P11/bin:ResourceCentre_P11/ant/junit.jar:ResourceCentre_P11/ant/org.hamcrest.core_1.3.0.v201303031735.jar org.junit.runner.JUnitCore ResourceCentreTest
+      run: java -cp ResourceCentre_Refactor/bin:ResourceCentre_Refactor/ant/junit.jar:ResourceCentre_Refactor/ant/org.hamcrest.core_1.3.0.v201303031735.jar org.junit.runner.JUnitCore ResourceCentreTest
     - name: Test Execution
-      run: java -cp ResourceCentre_P11/bin ResourceCentre < ResourceCentre_P11/user_input.txt
+      run: java -cp ResourceCentre_Refactor/bin ResourceCentre < ResourceCentre_Refactor/user_input.txt
