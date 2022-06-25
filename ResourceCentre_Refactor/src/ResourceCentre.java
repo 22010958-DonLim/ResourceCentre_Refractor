@@ -38,11 +38,13 @@ public class ResourceCentre {
 					// Add a camcorder
 					Camcorder cc = inputCamcorder();
 					ResourceCentre.addCamcorder(camcorderList, cc);
+					System.out.println("Camcorder added");
 
 				} else if (itemType == 2) {
 					// Add Chromebook
 					Chromebook cb = inputChromebook();
 					ResourceCentre.addChromebook(chromebookList, cb);
+					System.out.println("Chromebook added");
 
 				} else {
 					System.out.println("Invalid type");
@@ -178,7 +180,7 @@ public class ResourceCentre {
 	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
 		
 		camcorderList.add(cc);
-		System.out.println("Camcorder added");
+		
 	}
 	
 	public static Chromebook inputChromebook() {
@@ -193,7 +195,7 @@ public class ResourceCentre {
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 
 		chromebookList.add(cb);
-		System.out.println("Chromebook added");
+		
 	}
 	
 	//================================= Option 3 Loan (CURD- Update) =================================

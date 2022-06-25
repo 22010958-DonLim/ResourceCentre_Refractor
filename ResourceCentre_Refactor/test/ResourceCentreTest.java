@@ -33,7 +33,7 @@ public class ResourceCentreTest {
 
 	
 	@Test
-	public void addCamcorderTest() {
+	public void testAddCamcorder() {
 		// Item list is not null, so that can add a new item - boundary
 		assertNotNull("Check if there is valid Camcorder arraylist to add to", camcorderList);
 		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
@@ -49,7 +49,7 @@ public class ResourceCentreTest {
 		assertSame("Check that Camcorder is added", cc2, camcorderList.get(1));
 	}
 	@Test
-	public void addChromebookTest() {
+	public void testAddChromebook() {
 		// Item list is not null, so that can add a new item - boundary
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		
@@ -67,7 +67,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void retrieveAllCamcorderTest() {
+	public void testRetrieveAllCamcorder() {
 		// Test if Item list is not null but empty -boundary
 		assertNotNull("Test if there is valid Camcorder arraylist to retrieve item", camcorderList);
 		
@@ -90,7 +90,7 @@ public class ResourceCentreTest {
 		
 	}
 	@Test
-	public void retrieveAllChrombookTest() {
+	public void testRetrieveAllChrombook() {
 		//fail("Not yet implemented");
 		// Test if Item list is not null but empty - boundary
 		assertNotNull("Test if there is valid Chromebook arraylist to retrieve item from", chromebookList);
@@ -113,7 +113,7 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void doLoanCamcorderTest() {
+	public void testDoLoanCamcorder() {
 		//boundary
 		assertNotNull("test if there is valid Camcorder arraylist to loan from", camcorderList);
 		
@@ -136,7 +136,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void doLoanChromebookTest() {
+	public void testDoLoanChromebook() {
 		//boundary
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
@@ -158,7 +158,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void doReturnCamcorderTest() {
+	public void testDoReturnCamcorder() {
 		//boundary
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
@@ -175,7 +175,24 @@ public class ResourceCentreTest {
 		assertFalse("Test if non-existing amcorder CC0013 is returned - false?", isReturned);
 		
 	}
-	
+	@Test
+	public void testDoReturnChromebook() {
+		//boundary
+		assertNotNull("Check if there is valid chromebook arraylist to add to", chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+
+		//error
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Check that available chromebook CB0011 is returned - false?", isReturned);		
+		//normal
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Check that loanded out chromebook CB0012 is returned - true", isReturned);
+		//error
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertFalse("Check that non-existing chromebook CB0013  is returned - false?", isReturned);
+	}
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
