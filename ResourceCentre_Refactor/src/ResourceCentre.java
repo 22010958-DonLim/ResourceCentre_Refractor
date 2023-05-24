@@ -177,8 +177,17 @@ public class ResourceCentre {
 		return cc;
 		
 	}
+	
 	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
-		
+		Camcorder item;
+		for(int i = 0; i < camcorderList.size(); i++) {
+			item = camcorderList.get(i);
+			if (item.getAssetTag().equalsIgnoreCase(cc.getAssetTag()) )
+				return;
+		}
+		if ((cc.getAssetTag().isEmpty()) || (cc.getDescription().isEmpty()) ) {
+			return;
+		}
 		camcorderList.add(cc);
 		
 	}
@@ -193,7 +202,16 @@ public class ResourceCentre {
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
-
+		Chromebook item;
+		for(int i = 0; i < chromebookList.size(); i++) {
+			item = chromebookList.get(i);
+			if (item.getAssetTag().equalsIgnoreCase(cb.getAssetTag()) )
+				return;
+		}
+		if ((cb.getAssetTag().isEmpty()) || (cb.getDescription().isEmpty()) ) {
+			return;
+		}
+		
 		chromebookList.add(cb);
 		
 	}
@@ -203,9 +221,11 @@ public class ResourceCentre {
 		
 		boolean isLoaned = false;
 
+		if (tag.isEmpty() || dueDate.isEmpty())
+			return false;
+		
 		for (int i = 0; i < camcorderList.size(); i++) {
-			
-			
+					
 			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())				
 					&& camcorderList.get(i).getIsAvailable() == true) {
 				
@@ -233,13 +253,14 @@ public class ResourceCentre {
 	
 
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
-		// comments: write your code here
 		boolean isLoaned = false;
 
+		if (tag.isEmpty() || dueDate.isEmpty())
+			return false;
+		
 		for (int i = 0; i < chromebookList.size(); i++) {
 
 			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-					
 					&& chromebookList.get(i).getIsAvailable() == true) {
 				
 				chromebookList.get(i).setIsAvailable(false);
@@ -269,7 +290,11 @@ public class ResourceCentre {
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
 
+		if (tag.isEmpty())
+			return false;
+		
 		for (int i = 0; i < camcorderList.size(); i++) {
+
 			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
 					&& camcorderList.get(i).getIsAvailable() == false) {
 				camcorderList.get(i).setIsAvailable(true);
@@ -297,7 +322,11 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag) {
 		boolean isReturned = false;
 
+		if (tag.isEmpty())
+			return false;
+		
 		for (int i = 0; i < chromebookList.size(); i++) {
+
 			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
 					&& chromebookList.get(i).getIsAvailable() == false) {
 				chromebookList.get(i).setIsAvailable(true);
