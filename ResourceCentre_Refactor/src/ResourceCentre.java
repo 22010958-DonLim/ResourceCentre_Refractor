@@ -8,8 +8,8 @@ public class ResourceCentre {
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
 		ArrayList<Chromebook> chromebookList = new ArrayList<Chromebook>();
 
-		camcorderList.add(new Camcorder("CC001", "Sony HDR-CX405", 35));
-		camcorderList.add(new Camcorder("CC002", "Panasonic HC-MDH2", 10));
+		camcorderList.add(new Camcorder("CC001", "Sony HDR-CX405", "35"));
+		camcorderList.add(new Camcorder("CC002", "Panasonic HC-MDH2", "10"));
 		chromebookList.add(new Chromebook("CB001", "ASUS Chromebook ", "Win 10"));
 		chromebookList.add(new Chromebook("CB002", "HP Chromebook", "Win 10"));
 
@@ -167,7 +167,7 @@ public class ResourceCentre {
 	public static Camcorder inputCamcorder() {
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
-		int zoom = Helper.readInt("Enter optical zoom > ");
+		String zoom = Helper.readString("Enter optical zoom > ");
 
 		Camcorder cc= new Camcorder(tag, description, zoom);
 		return cc;
