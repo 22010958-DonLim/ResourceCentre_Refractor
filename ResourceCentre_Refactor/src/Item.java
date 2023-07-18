@@ -14,15 +14,31 @@ public class Item {
 	public String toString() {
 		
 		// Write your codes here
-		return null;
-	}
-	public String getAssetTag() {
-		return assetTag;
-	}
 
+		String itemInfo = String.format("%-10s %-30s %-10s %-10s", assetTag,
+				description, 
+				showAvailability(isAvailable),
+				dueDate);
+
+		
+
+		return itemInfo;
+	}
+	
+	public String showAvailability(boolean isAvailable) {
+		String avail;
+
+		if (isAvailable == true) {
+			avail = "Yes";
+		} else {
+			avail = "No";
+		}
+		return avail;
+	}
 	public String getDescription() {
 		return description;
 	}
+	
 
 	public String getDueDate() {
 		return dueDate;
@@ -39,5 +55,12 @@ public class Item {
 	public void setIsAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
 	}
+	
+
+	public String getAssetTag() {
+		return assetTag;
+	}
+
+
 }
 
