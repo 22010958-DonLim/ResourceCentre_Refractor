@@ -22,8 +22,8 @@ public class ResourceCentreTest {
 	@Before
 	public void setUp() throws Exception {
 		// prepare test data
-		cc1 = new Camcorder("CC0011", "Nikon HDSLR", 40);
-		cc2 = new Camcorder("CC0012", "Sony DSC-RX100M7", 20);
+		cc1 = new Camcorder("CC0011", "Nikon HDSLR", "40");
+		cc2 = new Camcorder("CC0012", "Sony DSC-RX100M7", "20");
 		cb1 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
 		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
 
@@ -84,7 +84,7 @@ public class ResourceCentreTest {
 		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre	
 		allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CC0011", "Nikon HDSLR", "Yes", "", "40");
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CC0012", "Sony DSC-RX100M7", "Yes", "", "20" );
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CC0012", "Sony DSC-RX100M7", "Yes", "", "20");
 	
 		assertEquals("Test that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
