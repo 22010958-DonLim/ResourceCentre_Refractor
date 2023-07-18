@@ -280,9 +280,6 @@ public class ResourceCentre {
 			if (tag.equalsIgnoreCase(assetTag)
 					&& availibility == true) {
 
-			//if (tag.equalsIgnoreCase(assetTag)
-					//&& chromebookList.get(i).getIsAvailable() == true) {
-
 				
 				chromebookList.get(i).setIsAvailable(false);
 				chromebookList.get(i).setDueDate(dueDate);
