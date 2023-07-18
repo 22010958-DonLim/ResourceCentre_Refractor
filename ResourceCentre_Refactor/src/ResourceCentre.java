@@ -30,8 +30,8 @@ public class ResourceCentre {
 			} else if (option == 2) {
 				// Add a new item
 				ResourceCentre.setHeader("ADD");			
-				itemTypeMenu();
-				
+				itemTypeMenu(); 
+	
 				int itemType = Helper.readInt("Enter option to select item type > ");
 
 				if (itemType == 1) {
@@ -54,6 +54,7 @@ public class ResourceCentre {
 				// Loan item
 				ResourceCentre.setHeader("LOAN");			
 				itemTypeMenu();
+
 				
 				int itemType = Helper.readInt("Enter option to select item type > ");
 
@@ -71,6 +72,7 @@ public class ResourceCentre {
 				// Return item
 				ResourceCentre.setHeader("RETURN");				
 				itemTypeMenu();
+
 				
 				int itemType = Helper.readInt("Enter option to select item type > ");
 				if (itemType == 1) {
@@ -93,7 +95,9 @@ public class ResourceCentre {
 
 	}
 
+
 	private static void itemTypeMenu() {
+
 		ResourceCentre.setHeader("ITEM TYPES");
 		System.out.println("1. Camcorder");
 		System.out.println("2. Chromebook");
